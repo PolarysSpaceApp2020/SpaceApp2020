@@ -1,0 +1,91 @@
+<PlayButton>:
+	text:'Read your Space Song'
+	pos_hint:{'x':0.6,'y':0.2}
+	size_hint:0.3, 0.5
+
+	
+
+ScreenManager:
+	Screen1:
+		id:screen1
+		spinner:[spinnerstate,spinnermeasure]
+		start_date:start_date
+		end_date:end_date
+		granule:granule
+		name:'screen1'	
+		on_enter:self.limit_spinner()
+		FloatLayout:
+			Label:
+				text:'Create your space song'
+				pos_hint:{'x':0.4,'y':0.88}
+				font_size:40
+				size_hint:0.2, 0.07
+			Spinner:
+				id:spinnerstate
+				text:'France'
+				values:['France','USA','China']
+				pos_hint:{'x':0.6,'y':0.68}
+				size_hint:0.3, 0.1
+				
+			Label:
+				text:'State : '
+				pos_hint:{'x':0.2,'y':0.68}
+				size_hint:0.2, 0.07
+				
+			Label:
+				text:'Choose Your Measure :'
+				pos_hint:{'x':0.2,'y':0.53}
+				size_hint:0.2, 0.07
+				
+			Spinner:
+				id:spinnermeasure
+				text:'Area-Averaged of Ozone'
+				values:['Area-Averaged of Ozone']
+				pos_hint:{'x':0.6,'y':0.53}
+				size_hint:0.3, 0.1
+
+			Label:
+				text:'Select starting date: (since 2005-01-01)'
+				pos_hint:{'x':0.25,'y':0.40}
+				size_hint:0.05, 0.05
+				
+			DatePicker:
+				id:start_date
+				pos_hint:{'x':0.70,'y':0.40}
+				size_hint:0.12, 0.05
+				pHint: .3, .3
+				text:'1.1.2020'	
+
+			Label:
+				text:'Select ending date:'
+				pos_hint:{'x':0.25,'y':0.30}
+				size_hint:0.05, 0.05
+			DatePicker:
+				id:end_date
+				pos_hint:{'x':0.70,'y':0.30}	
+				size_hint:0.12, 0.05
+				pHint: .3, .3
+				text:'23.5.2020'	
+				
+				
+			Label:
+				text:'Select your time resolution in days: '
+				pos_hint:{'x':0.25,'y':0.20}
+				size_hint:0.05, 0.05
+				
+			TextInput:
+				id:granule
+				text:'7'
+				pos_hint:{'x':0.72,'y':0.20}
+				size_hint:0.05, 0.05
+				
+			Button:
+				text:'Ok'
+				pos_hint:{'x':0.4,'y':0.05}
+				size_hint:0.2, 0.07
+				on_press:screen1.on_press()
+
+
+
+				
+		
